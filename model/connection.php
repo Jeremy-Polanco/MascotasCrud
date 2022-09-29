@@ -1,9 +1,14 @@
 <?php 
 
 class Connection{
+    // private $connection = null;
+    // private $usuario = "root";
+    // private $contrasena = "";
+    // private $db = "tarea02programacionweb";
+    // private $host = "localhost";
     private $connection = null;
     private $usuario = "root";
-    private $contrasena = "";
+    private $contrasena = "K.7@a9]xs[PP*[Uc";
     private $db = "tarea02programacionweb";
     private $host = "localhost";
 

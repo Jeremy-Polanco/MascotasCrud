@@ -46,7 +46,7 @@
 
         public function buscarMascotas(){
             try {
-                $sentencia = $this->connection->prepare('SELECT id, nombre, tipo, sexo, telefono, foto FROM `mascota` ORDER BY `nombre` ASC');
+                $sentencia = $this->connection->prepare('SELECT id, nombre, tipo, sexo, telefono, foto, ubicacion FROM `mascota` ORDER BY `nombre` ASC');
                 $sentencia->execute();
                 $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 $this->connection = null;
@@ -55,21 +55,6 @@
                 $this->error();
             }
         }
-
-        // public function buscarTareasConFiltro($busqueda){
-        //     try {
-        //         $sentencia = $this->connection->prepare('SELECT * FROM `todo` WHERE usuario = ? AND (nombre LIKE ? OR descripcion LIKE ?) ORDER BY `fecha` ASC');
-        //         $sentencia->bindParam(1, $_SESSION['usuario'], PDO::PARAM_STR);
-        //         $sentencia->bindParam(2, $busqueda, PDO::PARAM_STR);
-        //         $sentencia->bindParam(3, $busqueda, PDO::PARAM_STR);
-        //         $sentencia->execute();
-        //         $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-        //         $this->connection = null;
-        //         return $resultado;
-        //     } catch (PDOException $e) {
-        //         echo $e->getMessage();
-        //     }
-        // }
         
         public function buscarMascota($id){  
             try {
@@ -90,7 +75,7 @@
                 foto = ?, correo = ? WHERE id = ?');
                 $sentencia->bindParam(1, $nombre, PDO::PARAM_STR);
                 $sentencia->bindParam(2, $descripcion, PDO::PARAM_STR);
-                $sentencia->bindParam(3, $fecha, PDO::PARAM_STR);
+                $sentencia->bindParam(3, $fecha_nacimiento, PDO::PARAM_STR);
                 $sentencia->bindParam(4, $tipo, PDO::PARAM_STR);
                 $sentencia->bindParam(5, $sexo, PDO::PARAM_STR);
                 $sentencia->bindParam(6, $ubicacion, PDO::PARAM_STR);

@@ -12,7 +12,7 @@ $nombre = "";
 $descripcion = "";
 $fecha_nacimiento = "";
 $tipo = "";
-$sexo = "Macho";
+$sexo = "Varon";
 $ubicacion = "";
 $telefono = "";
 $color = "";
@@ -76,7 +76,7 @@ if($_POST){
                 $respuesta = $mascota->editarMascota($id, $nombre, $descripcion, $fecha_nacimiento, $tipo, $sexo, $ubicacion, $telefono, $color, $foto, $correo);
                 if($respuesta == 1)
                 {
-                    header("Location: index.php");
+                    header("Location: registro.php");
                     die();
                 }
                 $parametro = $id;
@@ -94,6 +94,7 @@ if($_POST){
                 $color = "";
                 $foto = "";
                 $correo = "";
+                $sexo = "Varon";
                 message("success", "Mascota creada.");
                 header("Location: registro.php");
             }
